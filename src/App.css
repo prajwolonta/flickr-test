@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+
+.image{
+  position:relative;
+  margin-bottom:30px
+}
+.image button{
+  position:absolute;
+  left:10px;
+  top:10px;
+}
+.App{
+  padding-bottom:50px;
+}
