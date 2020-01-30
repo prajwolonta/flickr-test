@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Image from './Image'
 import axios from 'axios'
 const Search = ()=>{
-    const [tags, setTags] = useState('china')
+    const [tags, setTags] = useState('nepal')
     const [images, setImages] = useState([])
     const [page, setPage] = useState(1)
     const [keywords, setKeywords] = useState('')
@@ -29,7 +29,7 @@ const Search = ()=>{
                         ...allPhotos
                     ]
                 })
-            })
+            }).catch((error)=>console.log(error))
 
     },[page, tags, keywords])
 
@@ -65,24 +65,28 @@ const Search = ()=>{
                     <input type="text" />
                 </div>
                 <div>
-                    <label>Tags</label>
+                    <label>Keywords</label>
                     <input type="text" onChange={(e)=>onInputChange(e)} value={keywords} />
                 </div>
                 <div>
-                    <label>Most Popular</label>
+                    <label>Most Popular Tags</label>
                     <select onChange={(e)=>onSelectChange(e)} value={tags}>
                         <option value="china">China</option>
                         <option value="usa">usa</option>
                         <option value="nepal">nepal</option>
+                        <option value="India">India</option>
+                        <option value="Sikkim">Sikkim</option>
                     </select>
                 </div>
 
             </div>
             <div className="searchResults">
-                <div className="row">
-                    {
-                        images.map((url)=><Image url={url}/>)
-                    }
+                <div className="images">
+                    <div className="row">
+                        {
+                            images.map((url)=><Image url={url}/>)
+                        }
+                    </div>
                 </div>
             </div>
 

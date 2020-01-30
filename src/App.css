@@ -37,7 +37,9 @@
   }
 }
 
-
+.images{
+  text-align:left;
+}
 .image{
   position:relative;
   margin-bottom:30px
